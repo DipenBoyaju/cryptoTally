@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000
 const app = express();
 
 app.use(cors({
-  origin: 'https://crypto-tally-backend.vercel.app',
+  origin: 'https://crypto-tally.vercel.app',
   // origin: 'http://localhost:5173',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,

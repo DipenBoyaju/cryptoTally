@@ -15,7 +15,7 @@ const app = express();
 app.use(cors({
   origin: 'https://crypto-tally.vercel.app',
   // origin: 'http://localhost:5173',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  methods: 'GET,POST',
   credentials: true,
 }));
 app.use(express.json())

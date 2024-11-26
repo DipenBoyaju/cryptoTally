@@ -85,7 +85,7 @@ export const signin = async (req, res) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       // sameSite: process.env.NODE_ENV === 'production' ? 'Strict' : 'Lax',
-      sameSite: 'Strict',
+      sameSite: 'None',
       maxAge: 3600000
     })
 

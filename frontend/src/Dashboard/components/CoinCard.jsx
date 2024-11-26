@@ -68,7 +68,11 @@ const CoinCard = ({ purchasedPrice, purchasedQuantity, coinData, id }) => {
           <p className={`${changeRate < 0 ? 'text-red-500' : 'text-green-500'}`}>{changeRate?.toFixed(2)}%</p>
         </div>
       </div>
-      <div className="py-4 w-full">
+      <div className="py-4 w-full relative">
+        <div className="absolute top-0 -mt-5 ">
+          <p className="text-sm text-zinc-50">Chart</p>
+          <p className="bg-zinc-600 text-[10px] font-semibold p-1  shadow-md rounded-sm w-fit">7D</p>
+        </div>
         <img src={`https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/${id}.svg`} alt="" className={`w-full ${valueChange > 0 ? '[filter:hue-rotate(85deg)_saturate(80%)_brightness(0.85)]' : '[filter:hue-rotate(300deg)_saturate(210%)_brightness(0.7)_contrast(170%)]'}`} />
       </div>
       <div className="flex justify-between">

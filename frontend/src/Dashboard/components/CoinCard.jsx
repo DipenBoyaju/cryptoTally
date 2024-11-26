@@ -1,4 +1,3 @@
-import chart from '../../assets/images/chart.png'
 import { GoDash } from "react-icons/go";
 import { IoTrendingDownOutline, IoTrendingUpOutline } from "react-icons/io5";
 import { useGetAllCoinInfoQuery } from '../../apis/coinDataApi';
@@ -69,8 +68,8 @@ const CoinCard = ({ purchasedPrice, purchasedQuantity, coinData, id }) => {
           <p className={`${changeRate < 0 ? 'text-red-500' : 'text-green-500'}`}>{changeRate?.toFixed(2)}%</p>
         </div>
       </div>
-      <div className="pb-4">
-        <img src={chart} alt="" />
+      <div className="py-4 w-full">
+        <img src={`https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/${id}.svg`} alt="" className={`w-full ${valueChange > 0 ? '[filter:hue-rotate(85deg)_saturate(80%)_brightness(0.85)]' : '[filter:hue-rotate(300deg)_saturate(210%)_brightness(0.7)_contrast(170%)]'}`} />
       </div>
       <div className="flex justify-between">
         <p className='text-[12px]'>Quantity : </p>

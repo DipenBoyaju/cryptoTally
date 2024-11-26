@@ -10,7 +10,8 @@ const AddCoin = ({ setAddCoin, coinData }) => {
   const [formData, setFormData] = useState({
     purchasedPrice: "",
     purchasedQuantity: "",
-    coin: ""
+    coin: "",
+    id: currentUser._id
   });
 
   const [selectedOption, setSelectedOption] = useState(null); // Default to null
@@ -46,7 +47,6 @@ const AddCoin = ({ setAddCoin, coinData }) => {
     const updatedFormData = {
       ...formData,
       coin: selectedOption.value,
-      id: currentUser._id
     };
 
     console.log('updatedFormData', updatedFormData);

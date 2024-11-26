@@ -24,9 +24,6 @@ const AddCoin = ({ setAddCoin, coinData }) => {
   };
 
   useEffect(() => {
-    // Log coinData to verify structure
-    console.log("coinData:", coinData);
-
     // Map coinData to Select options
     const options = coinData?.map((coin) => ({
       value: coin.id, // Use coin ID as the value
@@ -35,9 +32,6 @@ const AddCoin = ({ setAddCoin, coinData }) => {
 
     setCoinOptions(options);
   }, [coinData]);
-  console.log(formData);
-
-  console.log("fd", formData);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

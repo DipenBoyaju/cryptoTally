@@ -1,9 +1,10 @@
 import express from 'express'
-import { getCoinDatas } from '../controllers/coinDataController.js';
+import { getCoinDatas, getCoinInfos } from '../controllers/coinDataController.js';
 
 
 const router = express.Router()
 
 router.route('/getCoinData').get(getCoinDatas)
+router.route('/getCoinInfo').get(getCoinInfos)
 
 export default router;

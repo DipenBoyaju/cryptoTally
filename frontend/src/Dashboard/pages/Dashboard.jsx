@@ -1,6 +1,11 @@
+import { useGetAllCoinDataQuery } from "../../apis/coinDataApi"
 
 
 const Dashboard = () => {
+  const { data } = useGetAllCoinDataQuery()
+
+  console.log("cmc data", data?.data?.data);
+
 
   return (
     <div className="w-full  bg-zinc-900 text-white h-screen p-5">

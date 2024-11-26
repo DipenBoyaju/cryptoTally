@@ -6,7 +6,7 @@ import { verifyUser } from '../middleware/verifyUser.js';
 const router = express.Router()
 
 router.route('/addCoin').post(verifyUser, addCoin)
-router.route('/getCoins').get(verifyUser, getCoins)
+router.route('/getCoins/:id').get(verifyUser, getCoins)
 
 
 export default router;

@@ -8,16 +8,17 @@ import coinRoute from './routes/coinRoute.js'
 import coinDataRoute from './routes/coinDatasRoute.js'
 
 dotenv.config();
-const PORT = process.env.PORT || 5000
 
 const app = express();
+const PORT = process.env.PORT || 5000
 
 app.use(cors({
-  origin: 'https://crypto-tally.vercel.app',
-  // origin: 'http://localhost:5173',
-  methods: 'GET,POST',
+  origin: 'http://localhost:5173',
+  // origin: 'https://crypto-tally.vercel.app',
+  methods: 'GET,POST,DELETE',
   credentials: true,
 }));
+
 app.use(express.json())
 app.use(cookieParser());
 
@@ -38,8 +39,11 @@ connectDB()
 
 app.get('/', (req, res) => {
   res.send('<h1>Welcome to my server</h1>');
-})
+});
 
 app.use((req, res) => {
-  res.send('<h1>404 Not Found</h1>')
+  res.status(400).json({
+    status: 'error',
+    message: 'Page not Found'
+  })
 })

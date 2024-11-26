@@ -4,11 +4,13 @@ import userReducer from '../features/auth/authSlice.js'
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist'
 import { coinApi } from "../apis/coinApi.js";
+import { coinDataApi } from "../apis/coinDataApi.js";
 
 
 const rootReducer = combineReducers({
   [authApi.reducerPath]: authApi.reducer,
   [coinApi.reducerPath]: coinApi.reducer,
+  [coinDataApi.reducerPath]: coinDataApi.reducer,
   user: userReducer,
 })
 
@@ -30,6 +32,7 @@ export const store = configureStore({
   ).concat(
     authApi.middleware,
     coinApi.middleware,
+    coinDataApi.middleware
   )
 })
 

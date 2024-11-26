@@ -3,7 +3,6 @@ import Coins from "../models/CoinModel.js";
 
 export const addCoin = async (req, res) => {
   const { coin, purchasedPrice, purchasedQuantity } = req.body;
-  console.log(req.body);
 
   const userId = req.user.id;
 
@@ -53,14 +52,9 @@ export const addCoin = async (req, res) => {
 }
 
 export const getCoins = async (req, res) => {
-  if (!req.user) {
-    return res.status(401).json({
-      success: false,
-      message: 'User not authenticated',
-    });
-  }
+  const { id } = req.params;
   try {
-    const coins = await Coins.find({ user: req.user.id })
+    const coins = await Coins.find({ user: id })
 
     return res.status(200).json({
       success: true,

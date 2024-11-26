@@ -3,8 +3,10 @@ import { RxCross1 } from "react-icons/rx";
 import Select from "react-select";
 import { toast } from "react-toastify";
 import { useAddCoinMutation } from "../../apis/coinApi";
+import { useSelector } from "react-redux";
 
 const AddCoin = ({ setAddCoin, coinData }) => {
+  const { currentUser } = useSelector((state) => state.user)
   const [formData, setFormData] = useState({
     purchasedPrice: "",
     purchasedQuantity: "",
@@ -44,6 +46,7 @@ const AddCoin = ({ setAddCoin, coinData }) => {
     const updatedFormData = {
       ...formData,
       coin: selectedOption.value,
+      id: currentUser._id
     };
 
     console.log('updatedFormData', updatedFormData);

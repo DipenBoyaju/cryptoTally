@@ -2,16 +2,16 @@ import Coins from "../models/CoinModel.js";
 
 
 export const addCoin = async (req, res) => {
-  const { coin, purchasedPrice, purchasedQuantity } = req.body;
+  const { coin, purchasedPrice, purchasedQuantity, id } = req.body;
 
-  const userId = req.user.id;
+  // const userId = req.user.id;
 
-  if (!userId) {
-    return res.status(401).json({
-      success: false,
-      message: 'Unauthorized',
-    });
-  }
+  // if (!userId) {
+  //   return res.status(401).json({
+  //     success: false,
+  //     message: 'Unauthorized',
+  //   });
+  // }
 
   if (!coin || !purchasedPrice || !purchasedQuantity) {
     return res.status(400).json({
@@ -32,7 +32,7 @@ export const addCoin = async (req, res) => {
       coin,
       purchasedPrice,
       purchasedQuantity,
-      user: userId,
+      user: id,
     });
 
     await newCoin.save();

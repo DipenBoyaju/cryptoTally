@@ -20,7 +20,7 @@ const List = () => {
   return (
     <div className="w-full text-white">
       <h2 className="text-lg">Crypto List</h2>
-      <div className="pt-5 grid grid-cols-3 gap-5">
+      <div className="pt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {
           // Make sure coinData is available before mapping
           data?.data?.length > 0 && (

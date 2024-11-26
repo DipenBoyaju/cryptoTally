@@ -6,8 +6,9 @@ const Topbar = () => {
   const { currentUser } = useSelector((state) => state.user);
   return (
     <div className="bg-zinc-800 p-4 flex items-center justify-between">
-      <div className="text-zinc-400 capitalize">
-        Crypto Investment {currentUser.fullname}
+      <div className="">
+        <p className="capitalize text-zinc-400 hidden md:block">Crypto Investment {currentUser.fullname}</p>
+        <p className="text-2xl font-semibold text-orange-500">CryptoTally</p>
       </div>
       <div className="flex items-center justify-between gap-5">
         <div className="">

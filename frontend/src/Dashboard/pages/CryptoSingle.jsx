@@ -21,7 +21,7 @@ const CryptoSingle = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <p className="bg-zinc-700 rounded-full text-zinc-500 text-xs font-semibold p-0.5 px-3">#{singleCoin?.cmc_rank}</p>
-            <img src={logo} alt="" className="size-6" />
+            <img src={logo} alt="" className="size-8" />
             <div className="flex items-center gap-1">
               <p className="text-lg font-semibold">{coin?.name}</p>
               <p className="text-sm text-zinc-500 font-semibold">{coin?.symbol}</p>
@@ -42,7 +42,7 @@ const CryptoSingle = () => {
 
           <SideCard title="Volume (24h)" value={singleCoin?.quote.USD.volume_24h} volume={singleCoin?.quote?.USD.volume_change_24h.toFixed(2)} />
         </div>
-        <SideCard title="Circulating supply" value={singleCoin?.circulating_supply} symbol={singleCoin?.symbol} />
+        <SideCard title="Circulating supply" value={singleCoin?.circulating_supply} symbol={singleCoin?.symbol} style="mt-2" />
         <div className="">
           <PriceConversion symbol={coin?.symbol} price={singleCoin?.quote.USD.price} />
         </div>

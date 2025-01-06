@@ -28,10 +28,10 @@ const Coins = () => {
           </thead>
           <tbody>
             {
-              data?.data?.data?.slice(0, 10).map((coin) => (
+              data?.data?.data?.slice(0, 20).map((coin) => (
                 <tr key={coin.id} className="cursor-pointer hover:bg-zinc-800" onClick={() => nav(`${coin?.id}`)}>
                   <td>{coin?.cmc_rank}</td>
-                  <td>{coin?.name}</td>
+                  <td className="font-semibold">{ }{coin?.name} <span className="text-xs">{coin?.symbol}</span></td>
                   <td>${coin?.quote?.USD.price.toFixed(2)}</td>
                   <td>{coin?.quote?.USD.percent_change_1h.toFixed(2)}%</td>
                   <td>{coin?.quote?.USD.percent_change_24h.toFixed(2)}%</td>

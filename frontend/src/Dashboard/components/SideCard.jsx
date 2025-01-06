@@ -1,6 +1,6 @@
 import { MdOutlineArrowDropDown, MdOutlineArrowDropUp } from "react-icons/md";
 
-const SideCard = ({ title, value, supply, symbol, volume }) => {
+const SideCard = ({ title, value, supply, symbol, volume, style }) => {
 
   const formatValue = (num) => {
     if (num >= 1_000_000_000_000) {
@@ -19,7 +19,7 @@ const SideCard = ({ title, value, supply, symbol, volume }) => {
     }
   };
   return (
-    <div className="border border-zinc-700 rounded-lg py-2 flex flex-col justify-center items-center space-y-1">
+    <div className={`border border-zinc-700 rounded-lg py-2 flex flex-col justify-center items-center space-y-1 ${style}`}>
       <p className="font-semibold text-xs text-zinc-400">{title}</p>
       <div className="flex items-center">
         <p className="font-semibold">{value ? formatValue(value) : formatValue(supply)} {supply !== '∞' ? symbol : ''} </p>

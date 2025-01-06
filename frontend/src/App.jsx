@@ -7,6 +7,8 @@ import ProtectedRoutes from './features/routes/ProtectedRoute'
 import RootLayout from './Dashboard/layout/RootLayout'
 import Dashboard from './Dashboard/pages/Dashboard'
 import List from './Dashboard/pages/List'
+import Coins from './Dashboard/pages/Coins'
+import CryptoSingle from './Dashboard/pages/CryptoSingle'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -26,6 +28,8 @@ const App = () => {
           children: [
             { index: true, element: <Dashboard /> },
             { path: 'list', element: <List /> },
+            { path: 'coins', element: <Coins /> },
+            { path: 'coins/:id', element: <CryptoSingle /> },
           ]
         }
       ]

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { useGetAllCoinDataQuery, useGetAllCoinInfoQuery } from "../../apis/coinDataApi"
 import SideCard from "../components/SideCard";
 import PriceConversion from "../components/PriceConversion";
+import CoinChart from "../components/CoinChart";
 
 const CryptoSingle = () => {
   const { id } = useParams()
@@ -30,6 +31,9 @@ const CryptoSingle = () => {
           <div className="">
             <h3 className="font-bold text-3xl">${singleCoin?.quote.USD.price.toFixed(2)}</h3>
           </div>
+        </div>
+        <div className="">
+          <CoinChart />
         </div>
       </div>
       <div className="border-l border-zinc-700 col-span-3 px-4">
